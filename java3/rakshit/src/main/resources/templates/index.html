@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head><title>Add PRODUCT</title></head>
+<body>
+<h1>Add PRODUCT</h1>
+<form method="get" action="" th:action="@{/addProduct}" th:object="${product}">
+<br/>ID: <input type="text" name="ID" th:field="*{ID}" />
+<br/>Name: <input type="text" name="name" th:field="*{name}" />
+<br/>Description <input type="text" name="description" th:field="*{description}" />
+<br/> <input type="submit" value="Add" />
+</form>
+</body>
+</html>

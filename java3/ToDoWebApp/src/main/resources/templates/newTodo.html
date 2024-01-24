@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head><title>Add To Do</title></head>
+<body>
+<h1>Add ToDo</h1>
+<form method="get" action="" th:action="@{/SaveTodo}" th:object="${todo}">
+<br/>Person <input type="text" name="person" th:field="{make}" />
+<br/>Description <input type="text" name="description" th:field="{model}" />
+<br/> <input type="submit" value="Add" />
+</form>
+</body>
+</html>

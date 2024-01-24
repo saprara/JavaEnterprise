@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head><title>Add Car</title></head>
+    <body>
+        <h1>Add Car</h1>
+        <form method="get" action="" th:action="@{/createCar}" th:object="${car}">
+          <br/>Make <input type="text" name="make" th:field="*{make}" />
+          <br/>Model <input type="text" name="model" th:field="*{model}" />
+          <br/>Color <input type="text" name="color" th:field="*{color}" />
+          <br/> <input type="submit" value="Add" />
+        </form>
+        
+</body>
+</html>
+

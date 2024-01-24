@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head><title>Edit Player</title></head>
+    <body>
+        <h1>Edit Player</h1>
+        <form method="get" action="" th:action="@{/savePlayer}" th:object="${player}">
+          <input type="hidden" name="name" th:field="*{id}" />
+          <br/>Name <input type="text" name="name" th:field="*{playerName}" />
+          <br/>Address <input type="text" name="author" th:field="*{playerAddress}" />
+          <br/>Team 
+          <select  th:field="*{teamID}">
+    <option th:value="${currentteam.teamID}" th:text="${currentteam.teamName}" selected="selected"></option>
+<option th:each="team : ${teams}" 
+th:value="${team.teamID}"
+th:text="${team.teamName}" 
+></option>
+</select>
+          
+          <br/>Role <select name="playerRole" th:field="*{playerRole}" >
+    <option th:text="Forward" th:value="Forward"></option>
+    <option th:text="Defense" th:value="Defense"></option>
+    <option th:text="Goalie" th:value="Goalie"></option>
+</select>
+          <br/>Active <input type="checkbox" name="activeStatus" th:checked="*{activeStatus}"/>
+
+          <br/> <input type="submit" value="Save" />
+        </form>
+                <a th:href="@{/}">Cancel</a>
+
+</body>
+</html>
+

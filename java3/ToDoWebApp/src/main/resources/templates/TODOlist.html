@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head><title>ToDo List</title></head>
+<body>
+<h1>ToDo List</h1>
+<body>
+<h1>ToDo List</h1>
+<table>
+<tr><th>ID</th><th>Person</th><th>Description</th>
+<tr th:each='c: ${todos}'>
+<td th:text='${c.id}'></td>
+<td th:text='${c.person}'></td>
+<td th:text='${c.description}'></td>
+<td><a th:href ="@{'/editTodo/' +${c.id}}"></a></td>
+</tr>
+</table>
+<a href="/newTodo">Add New Car</a>
+</body>
+</body>
+</html>

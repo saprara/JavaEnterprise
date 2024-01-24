@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+<h1>Hockey Player</h1>
+<h2 th:text="#{league}">League</h2>
+<h2 th:text="#{season}">League</h2>
+<div th:object="${player}">
+<br/>Name: <span th:text="*{name}"></span>
+<br/>Role: <span th:text="*{role}"></span>
+<br/>Street: <span th:text="*{address.street}"></span>
+<br/>City: <span th:text="*{address.city}"></span>
+<br/>Action:
+<span th:if="*{role} eq 'Forward' ">Shoots and scores!</span>
+<span th:if="*{role} eq 'Goalie' ">Big save!</span>
+</div>
+    </body>
+</html>

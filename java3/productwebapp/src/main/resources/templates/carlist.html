@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head><title>Car List</title></head>
+     <body>
+        <h1>Car List</h1>
+                <table>
+            <tr><th>ID</th><th>Make</th><th>Model</th><th>Color</th></tr>
+            <tr th:each='c: ${cars}'>
+                <td th:text='${c.id}'></td>
+                <td th:text='${c.make}'></td>
+                <td th:text='${c.model}'></td>
+                <td th:text='${c.color}'></td>
+            </tr>
+        </table>
+        <a href="/newCar">Add New Car</a>
+    </body>
+
+</html>
+
